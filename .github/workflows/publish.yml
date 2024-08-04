@@ -46,11 +46,3 @@ jobs:
             # export KV_NAMESPACE_ID2=$(wrangler kv:namespace list | node get_kv_id2.mjs)
             # echo "kv_namespaces = [{binding=\"KV_GET_SET\", id=${KV_NAMESPACE_ID}},{binding=\"KV_UID_DATA\", id=${KV_NAMESPACE_ID2}}]" >> wrangler.toml
             [ -z "$SECRET_TELEGRAM_API_TOKEN" ] && echo "Secret SECRET_TELEGRAM_API_TOKEN not set, creating dummy one..." && SECRET_TELEGRAM_API_TOKEN="default-gh-action-secret" || true
-          secrets: |
-            SECRET_TELEGRAM_API_TOKEN
-            SECRET_TELEGRAM_API_TOKEN2
-            SECRET_TELEGRAM_API_TOKEN3
-        env:
-          SECRET_TELEGRAM_API_TOKEN: ${{ secrets.SECRET_TELEGRAM_API_TOKEN }}
-          SECRET_TELEGRAM_API_TOKEN2: ${{ secrets.SECRET_TELEGRAM_API_TOKEN2 }}
-          SECRET_TELEGRAM_API_TOKEN3: ${{ secrets.SECRET_TELEGRAM_API_TOKEN3 }}
